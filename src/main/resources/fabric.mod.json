@@ -1,31 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
-  "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "id": "fartenware",
+  "version": "1.0",
+  "name": "FartenWare",
+  "description": "Addon for our various projects.",
   "authors": [
-    "seasnail"
+    "RedCarlos26 & Yeetusthefeetus."
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "private"
   },
-  "icon": "assets/template/icon.png",
+  "icon": "assets/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.Addon"
+      "fartenware.systems.FartenWare"
     ]
   },
   "mixins": [
-    "addon.mixins.json"
+    "fartenware.mixins.json"
   ],
+  "accessWidener": "accesswidener",
   "custom": {
-    "meteor-client:color": "225,25,25"
+    "meteor-client:color": "145,61,226"
   },
   "depends": {
     "java": ">=17",
-    "minecraft": ">=${mc_version}",
-    "meteor-client": "*"
+    "minecraft": ">=1.19.3",
+    "meteor-client": ">=0.5.1"
   }
 }
