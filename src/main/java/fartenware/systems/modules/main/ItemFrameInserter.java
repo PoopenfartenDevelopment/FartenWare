@@ -45,7 +45,7 @@ public class ItemFrameInserter extends Module{
     );
 
     public ItemFrameInserter() {
-        super(FartenWare.MAIN,"item-frame-inserter", "Places currently held item into item frame (recommend to use with auto replenish with unstackables enabled).");
+        super(FartenWare.MAIN,"item-frame-inserter", "Places currently held item into item frame.");
     }
 
     int timer = 0;

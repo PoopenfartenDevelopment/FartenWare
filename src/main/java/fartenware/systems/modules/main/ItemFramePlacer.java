@@ -68,7 +68,7 @@ public class ItemFramePlacer extends Module {
     );
 
     public ItemFramePlacer() {
-        super(FartenWare.MAIN, "item-frame-placer", "Assists with the item frame dupe by placing item frames on pistons.");
+        super(FartenWare.MAIN, "item-frame-placer", "Places item frames on pistons.");
     }
 
     private int timer;

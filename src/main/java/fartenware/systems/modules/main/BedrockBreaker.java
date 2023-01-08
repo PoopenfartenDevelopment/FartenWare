@@ -1,10 +1,10 @@
 package fartenware.systems.modules.main;
 
+import fartenware.systems.FartenWare;
 import fartenware.utils.bedrock.InventoryManager;
 import fartenware.utils.bedrock.Messager;
 import fartenware.utils.bedrock.TargetBlock;
 import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.systems.modules.Categories;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.block.Blocks;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class BedrockBreaker extends Module {
     public BedrockBreaker() {
-        super(Categories.World,"bedrock-breaker","Breaks bedrock automatically (requires haste 2).");
+        super(FartenWare.MAIN,"bedrock-breaker","Breaks bedrock automatically (requires haste 2).");
     }
 
     private static ArrayList<TargetBlock> cachedTargetBlockList = new ArrayList<>();
