@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class BedrockBreaker extends Module {
     public BedrockBreaker() {
-        super(FartenWare.MAIN,"bedrock-breaker","Breaks bedrock automatically (requires haste 2).");
+        super(FartenWare.MAIN, "bedrock-breaker", "Breaks bedrock automatically (requires haste 2).");
     }
 
     private static ArrayList<TargetBlock> cachedTargetBlockList = new ArrayList<>();
@@ -32,18 +32,19 @@ public class BedrockBreaker extends Module {
                 return;
             }
 
-            if (shouldAddNewTargetBlock(pos)){
+            if (shouldAddNewTargetBlock(pos)) {
                 TargetBlock targetBlock = new TargetBlock(pos, world);
                 cachedTargetBlockList.add(targetBlock);
             }
         }
     }
-    @EventHandler
-    public void onTick(TickEvent.Post event){
 
-    if (InventoryManager.warningMessage() != null) {
+    @EventHandler
+    public void onTick(TickEvent.Post event) {
+        if (InventoryManager.warningMessage() != null) {
             return;
         }
+
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
         PlayerEntity player = minecraftClient.player;
 
@@ -54,7 +55,7 @@ public class BedrockBreaker extends Module {
         for (int i = 0; i < cachedTargetBlockList.size(); i++) {
             TargetBlock selectedBlock = cachedTargetBlockList.get(i);
 
-            if (selectedBlock.getWorld() != MinecraftClient.getInstance().world ) {
+            if (selectedBlock.getWorld() != MinecraftClient.getInstance().world) {
                 cachedTargetBlockList = new ArrayList<>();
                 break;
             }
@@ -68,7 +69,6 @@ public class BedrockBreaker extends Module {
                 } else {
                     break;
                 }
-
             }
         }
     }

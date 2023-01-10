@@ -7,12 +7,15 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
+
+import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class BlockPlacer {
     public static void simpleBlockPlacement(BlockPos pos, ItemConvertible item) {
@@ -32,14 +35,15 @@ public class BlockPlacer {
             case UP:
                 pitch = 90f;
                 break;
-            case DOWN:
+            case DOWN: {
                 pitch = -90f;
                 break;
-            default:
+            }
+            default: {
                 pitch = 90f;
                 break;
+            }
         }
-
         minecraftClient.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(player.getYaw(1.0f), pitch, player.isOnGround()));
 
         Vec3d vec3d = new Vec3d(x, pos.getY(), pos.getZ());
@@ -53,12 +57,11 @@ public class BlockPlacer {
         ClientPlayerEntity player = minecraftClient.player;
         ItemStack itemStack = player.getStackInHand(Hand.MAIN_HAND);
 
-        minecraftClient.interactionManager.interactBlock(player,Hand.MAIN_HAND,hitResult);
+        mc.player.networkHandler.sendPacket(new PlayerInteractBlockC2SPacket(Hand.MAIN_HAND, hitResult, 0));
 
         if (!itemStack.isEmpty() && !player.getItemCooldownManager().isCoolingDown(itemStack.getItem())) {
             ItemUsageContext itemUsageContext = new ItemUsageContext(player, Hand.MAIN_HAND, hitResult);
             itemStack.useOnBlock(itemUsageContext);
-
         }
     }
 }

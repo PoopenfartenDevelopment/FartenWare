@@ -15,13 +15,13 @@ import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
 import net.minecraft.registry.tag.FluidTags;
 
 public class InventoryManager {
-    public static void switchToItem(ItemConvertible item) {
+    public static boolean switchToItem(ItemConvertible item) {
         MinecraftClient minecraftClient = MinecraftClient.getInstance();
         PlayerInventory playerInventory = minecraftClient.player.getInventory();
 
         int i = playerInventory.getSlotWithStack(new ItemStack(item));
 
-        if ("diamond_pickaxe".equals(item.toString())) {
+        if ("netherite_pickaxe".equals(item.toString())) {
             i = getEfficientTool(playerInventory);
         }
 
@@ -32,7 +32,9 @@ public class InventoryManager {
                 minecraftClient.interactionManager.pickFromInventory(i);
             }
             minecraftClient.getNetworkHandler().sendPacket(new UpdateSelectedSlotC2SPacket(playerInventory.selectedSlot));
+            return true;
         }
+        return false;
     }
 
     private static int getEfficientTool(PlayerInventory playerInventory) {
@@ -113,21 +115,20 @@ public class InventoryManager {
 
     public static String warningMessage() {
         if (InventoryManager.getInventoryItemCount(Blocks.PISTON) < 2) {
-            return "missing piston";
+            return "Missing piston";
         }
 
         if (InventoryManager.getInventoryItemCount(Blocks.REDSTONE_TORCH) < 1) {
-            return "missing redstone torch";
+            return "Missing redstone torch";
         }
 
         if (InventoryManager.getInventoryItemCount(Blocks.SLIME_BLOCK)<1){
-            return "missing slime";
+            return "Missing slime";
         }
 
         if (!InventoryManager.canInstantlyMinePiston()) {
-            return "missing instant mine";
+            return "Missing instant mine";
         }
         return null;
     }
-
 }

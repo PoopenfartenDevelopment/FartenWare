@@ -1,4 +1,5 @@
 package fartenware.utils.bedrock;
+
 import net.minecraft.block.Blocks;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.client.world.ClientWorld;
@@ -6,8 +7,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
 import java.util.ArrayList;
-
-
 
 public class TargetBlock {
     private BlockPos blockPos;
@@ -120,7 +119,7 @@ public class TargetBlock {
                 redstoneTorchBlockPos = slimeBlockPos.up();
             } else {
                 this.status = Status.FAILED;
-                Messager.actionBar("failed to place redstone torch");
+                Messager.actionBar("Failed to place redstone torch");
             }
         } else if (!this.world.getBlockState(this.blockPos).isOf(Blocks.BEDROCK) && this.world.getBlockState(this.pistonBlockPos).isOf(Blocks.PISTON)) {
             this.status = Status.RETRACTED;
@@ -143,10 +142,9 @@ public class TargetBlock {
             this.status = Status.UNINITIALIZED;
         } else if (!CheckingEnvironment.has2BlocksOfPlaceToPlacePiston(world, this.blockPos)) {
             this.status = Status.FAILED;
-            Messager.actionBar("failed to place piston");
+            Messager.actionBar("Failed to place piston");
         } else {
             this.status = Status.FAILED;
         }
     }
-
 }
