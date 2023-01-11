@@ -39,9 +39,7 @@ public class FartenWare extends MeteorAddon {
         MeteorClient.EVENT_BUS.registerLambdaFactory("fartenware.utils", (lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
 
         // Placeholders
-        MeteorStarscript.ss.set("fartenware", new ValueMap()
-            .set("fartenwatermark", VERSION)
-        );
+        MeteorStarscript.ss.set("fartenware", new ValueMap().set("fartenwatermark", VERSION));
 
 
         // Commands
