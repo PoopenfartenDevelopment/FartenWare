@@ -1,32 +1,37 @@
 {
   "schemaVersion": 1,
   "id": "fartenware",
-  "version": "1.0",
+  "version": "1.1",
   "name": "FartenWare",
   "description": "Addon for our various projects.",
   "authors": [
-    "RedCarlos26 & Yeetusthefeetus."
+    "RedCarlos26",
+    "Yeetusthefeetus"
   ],
   "contact": {
-    "repo": "private"
+    "homepage": "https://github.com/PoopenfartenDevelopment/FartenWare",
+    "issues": "https://github.com/PoopenfartenDevelopment/FartenWare",
+    "sources": "https://github.com/PoopenfartenDevelopment/FartenWare",
+    "discord": ""
   },
+  "license": "GPL-3.0",
   "icon": "assets/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "fartenware.systems.FartenWare"
+      "fartenware.FartenWare"
     ]
   },
   "mixins": [
     "fartenware.mixins.json"
   ],
-  "accessWidener": "accesswidener",
+  "accessWidener": "fartenware.accesswidener",
   "custom": {
     "meteor-client:color": "145,61,226"
   },
   "depends": {
     "java": ">=17",
-    "minecraft": ">=1.19.3",
-    "meteor-client": ">=0.5.1"
+    "minecraft": ">=1.19.4",
+    "meteor-client": ">0.5.2"
   }
 }

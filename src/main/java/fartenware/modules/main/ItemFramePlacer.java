@@ -1,19 +1,19 @@
-package fartenware.systems.modules.main;
+package fartenware.modules.main;
 
-import fartenware.systems.FartenWare;
+import fartenware.FartenWare;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.BoolSetting;
 import meteordevelopment.meteorclient.settings.IntSetting;
 import meteordevelopment.meteorclient.settings.Setting;
 import meteordevelopment.meteorclient.settings.SettingGroup;
-import meteordevelopment.meteorclient.systems.modules.Categories;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.utils.Utils;
 import meteordevelopment.meteorclient.utils.player.FindItemResult;
 import meteordevelopment.meteorclient.utils.player.InvUtils;
 import meteordevelopment.meteorclient.utils.world.BlockUtils;
 import meteordevelopment.orbit.EventHandler;
-import net.minecraft.block.*;
+import net.minecraft.block.FacingBlock;
+import net.minecraft.block.PistonBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.item.Items;
@@ -87,8 +87,7 @@ public class ItemFramePlacer extends Module {
         if (timer > 0) {
             timer--;
             return;
-        }
-        else timer = delay.get();
+        } else timer = delay.get();
 
         FindItemResult itemResult = InvUtils.findInHotbar(Items.ITEM_FRAME, Items.GLOW_ITEM_FRAME);
         if (!itemResult.found()) {
@@ -110,10 +109,10 @@ public class ItemFramePlacer extends Module {
             }
 
             Direction direction = mc.world.getBlockState(blockPos).get(FacingBlock.FACING);
-            if (backOfPiston.get()){
+            if (backOfPiston.get()) {
                 direction = direction.getOpposite();
             }
-            BlockPos placePos =getBlockPosFromDirection(direction, blockPos);
+            BlockPos placePos = getBlockPosFromDirection(direction, blockPos);
             BlockUtils.place(placePos, itemResult, rotate.get(), 50, true, true, swapBack.get());
 
             if (delay.get() != 0) {
@@ -125,14 +124,14 @@ public class ItemFramePlacer extends Module {
 
     private boolean shouldPlace(BlockPos pistonPos) {
         Direction direction = mc.world.getBlockState(pistonPos).get(FacingBlock.FACING);
-        if (backOfPiston.get()){
+        if (backOfPiston.get()) {
             direction = direction.getOpposite();
         }
         BlockPos iFramePos = getBlockPosFromDirection(direction, pistonPos);
 
         for (Entity entity : mc.world.getEntities()) {
             if (entity instanceof ItemFrameEntity) {
-                BlockPos entityPos = new BlockPos(Math.floor(entity.getPos().x), Math.floor(entity.getPos().y), Math.floor(entity.getPos().z));
+                BlockPos entityPos = new BlockPos(MathHelper.floor(entity.getPos().x), MathHelper.floor(entity.getPos().y), MathHelper.floor(entity.getPos().z));
                 if (iFramePos.equals(entityPos)) {
                     return false;
                 }
@@ -156,6 +155,7 @@ public class ItemFramePlacer extends Module {
 
         return blocks;
     }
+
     public static double distanceBetween(BlockPos pos1, BlockPos pos2) {
         double d = pos1.getX() - pos2.getX();
         double e = pos1.getY() - pos2.getY();

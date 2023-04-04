@@ -1,6 +1,6 @@
-package fartenware.systems.hud;
+package fartenware.modules.hud;
 
-import fartenware.systems.FartenWare;
+import fartenware.FartenWare;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
 import meteordevelopment.meteorclient.systems.hud.elements.TextHud;
 

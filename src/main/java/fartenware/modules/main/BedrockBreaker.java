@@ -1,11 +1,14 @@
-package fartenware.systems.modules.main;
+package fartenware.modules.main;
 
-import fartenware.systems.FartenWare;
+import fartenware.FartenWare;
 import fartenware.utils.bedrock.InventoryManager;
 import fartenware.utils.bedrock.Messager;
 import fartenware.utils.bedrock.TargetBlock;
 import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.settings.*;
+import meteordevelopment.meteorclient.settings.BoolSetting;
+import meteordevelopment.meteorclient.settings.ModuleListSetting;
+import meteordevelopment.meteorclient.settings.Setting;
+import meteordevelopment.meteorclient.settings.SettingGroup;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.misc.AntiPacketKick;
@@ -146,7 +149,7 @@ public class BedrockBreaker extends Module {
         return blockPos.isWithinDistance(player.getPos(), range);
     }
 
-    private static boolean shouldAddNewTargetBlock(BlockPos pos){
+    private static boolean shouldAddNewTargetBlock(BlockPos pos) {
         for (TargetBlock breaker : cachedTargetBlockList) {
             if (breaker.getBlockPos().getManhattanDistance(pos) == 0) {
                 return false;

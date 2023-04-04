@@ -1,10 +1,10 @@
-package fartenware.systems;
+package fartenware;
 
-import fartenware.systems.hud.*;
-import fartenware.systems.modules.main.BedrockBreaker;
-import fartenware.systems.modules.main.EchestFarmerPlus;
-import fartenware.systems.modules.main.ItemFrameInserter;
-import fartenware.systems.modules.main.ItemFramePlacer;
+import fartenware.modules.hud.TextPresets;
+import fartenware.modules.main.BedrockBreaker;
+import fartenware.modules.main.EchestFarmerPlus;
+import fartenware.modules.main.ItemFrameInserter;
+import fartenware.modules.main.ItemFramePlacer;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.Systems;
@@ -15,13 +15,12 @@ import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.utils.misc.MeteorStarscript;
 import meteordevelopment.starscript.value.ValueMap;
-
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 import net.minecraft.item.Items;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.lang.invoke.MethodHandles;
 
 public class FartenWare extends MeteorAddon {

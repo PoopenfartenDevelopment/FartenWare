@@ -1,10 +1,10 @@
-package fartenware.systems.modules.main;
+package fartenware.modules.main;
 
-import fartenware.systems.FartenWare;
-import fartenware.utils.FWorldUtils;
 import baritone.api.BaritoneAPI;
 import baritone.api.IBaritone;
 import baritone.api.pathing.goals.GoalBlock;
+import fartenware.FartenWare;
+import fartenware.utils.FartenUtils;
 import meteordevelopment.meteorclient.events.render.Render3DEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.renderer.ShapeMode;
@@ -121,7 +121,7 @@ public class EchestFarmerPlus extends Module {
 
     @EventHandler
     private void onTick(TickEvent.Pre event) {
-        if (!InvUtils.find(Items.OBSIDIAN).found()){
+        if (!InvUtils.find(Items.OBSIDIAN).found()) {
             if (baritone.getPathingBehavior().isPathing()) baritone.getCommandManager().execute("pause");
             needsTo = true;
             target = null;
@@ -146,15 +146,13 @@ public class EchestFarmerPlus extends Module {
             return;
         }
 
-        if (mc.player.getBlockPos().equals(target) && pickingUp){
+        if (mc.player.getBlockPos().equals(target) && pickingUp) {
             needsTo = false;
             target = null;
             pickingUp = false;
             ChatUtils.sendPlayerMsg(baritoneCommand.get());
             return;
         }
-
-
 
         // Break existing echest at target pos
         if (mc.world.getBlockState(target).getBlock() == Blocks.ENDER_CHEST && needsTo && !pickingUp) {
@@ -193,10 +191,9 @@ public class EchestFarmerPlus extends Module {
         }
     }
 
-
-    private BlockPos findSpot(){
-        for(BlockPos pos : FWorldUtils.getSphere(mc.player.getBlockPos(),1,1)){
-            if (mc.world.getBlockState(pos).isReplaceable() || pos != mc.player.getBlockPos()){
+    private BlockPos findSpot() {
+        for (BlockPos pos : FartenUtils.getSphere(mc.player.getBlockPos(), 1, 1)) {
+            if (mc.world.getBlockState(pos).isReplaceable() || pos != mc.player.getBlockPos()) {
                 return pos;
             }
         }

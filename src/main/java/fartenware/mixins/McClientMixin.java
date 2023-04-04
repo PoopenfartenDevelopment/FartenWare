@@ -1,6 +1,6 @@
 package fartenware.mixins;
 
-import fartenware.systems.modules.main.BedrockBreaker;
+import fartenware.modules.main.BedrockBreaker;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.MinecraftClient;

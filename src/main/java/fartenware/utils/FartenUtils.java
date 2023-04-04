@@ -1,11 +1,14 @@
 package fartenware.utils;
 
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FWorldUtils {
+public class FartenUtils {
+
+    // World
     public static List<BlockPos> getSphere(BlockPos centerPos, int radius, int height) {
         ArrayList<BlockPos> blocks = new ArrayList<>();
         for (int i = centerPos.getX() - radius; i < centerPos.getX() + radius; i++) {
