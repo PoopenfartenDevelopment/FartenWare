@@ -19,16 +19,6 @@
 <br />
 <br />
 
-</div>
-  <p align="center">
-    <strong>Other projects:</strong>
-    <br />
-    <a href="https://github.com/PoopenfartenDevelopment/HIGTools">HIGTools</a>
-    ·
-    <a href="https://github.com/drtshock/Potato">Venus</a>
-  </p>
-</div>
-
 <p align="right">
     <b>© 2023 PoopenfartenDevelopment</b>
 </p>
