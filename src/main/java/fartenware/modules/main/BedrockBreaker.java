@@ -62,12 +62,12 @@ public class BedrockBreaker extends Module {
         .build()
     );
 
+    public ArrayList<Module> toActivate;
+    private static ArrayList<TargetBlock> cachedTargetBlockList = new ArrayList<>();
+
     public BedrockBreaker() {
         super(FartenWare.MAIN, "bedrock-breaker", "Breaks bedrock automatically (requires haste 2).");
     }
-
-    public ArrayList<Module> toActivate;
-    private static ArrayList<TargetBlock> cachedTargetBlockList = new ArrayList<>();
 
     @Override
     public void onActivate() {

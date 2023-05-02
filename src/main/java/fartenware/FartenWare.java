@@ -8,7 +8,7 @@ import fartenware.modules.main.ItemFramePlacer;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.systems.commands.Commands;
+import meteordevelopment.meteorclient.commands.Commands;
 import meteordevelopment.meteorclient.systems.hud.Hud;
 import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
@@ -40,16 +40,12 @@ public class FartenWare extends MeteorAddon {
         // Placeholders
         MeteorStarscript.ss.set("fartenware", new ValueMap().set("fartenwatermark", VERSION));
 
-
         // Commands
-        Commands commands = Commands.get();
-        //commands.add(new Command());
-
+        //Commands.add(new Command());
 
         // HUD
         Hud hud = Systems.get(Hud.class);
         hud.register(TextPresets.INFO);
-
 
         // Modules
         Modules modules = Modules.get();

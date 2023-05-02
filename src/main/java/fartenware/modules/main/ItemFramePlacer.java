@@ -30,11 +30,9 @@ public class ItemFramePlacer extends Module {
     private final Setting<Integer> distance = sgGeneral.add(new IntSetting.Builder()
         .name("distance")
         .description("The max distance to search for pistons.")
-        .min(1)
-        .sliderMin(1)
+        .range(1, 6)
+        .sliderRange(1, 6)
         .defaultValue(5)
-        .sliderMax(6)
-        .max(6)
         .build()
     );
 
@@ -67,13 +65,13 @@ public class ItemFramePlacer extends Module {
         .build()
     );
 
-    public ItemFramePlacer() {
-        super(FartenWare.MAIN, "item-frame-placer", "Places item frames on pistons.");
-    }
-
     private int timer;
     private final ArrayList<BlockPos> positions = new ArrayList<>();
     private static final ArrayList<BlockPos> blocks = new ArrayList<>();
+
+    public ItemFramePlacer() {
+        super(FartenWare.MAIN, "item-frame-placer", "Places item frames on pistons.");
+    }
 
     @Override
     public void onActivate() {

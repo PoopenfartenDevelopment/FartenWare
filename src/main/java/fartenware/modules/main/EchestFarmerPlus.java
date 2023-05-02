@@ -34,6 +34,7 @@ public class EchestFarmerPlus extends Module {
     private final SettingGroup sgRender = settings.createGroup("Render");
 
     // General
+
     private final Setting<Boolean> selfToggle = sgGeneral.add(new BoolSetting.Builder()
         .name("self-toggle")
         .description("Disables when you reach the desired amount of obsidian.")
@@ -60,6 +61,7 @@ public class EchestFarmerPlus extends Module {
     );
 
     // Render
+
     private final Setting<Boolean> swingHand = sgRender.add(new BoolSetting.Builder()
         .name("swing-hand")
         .description("Swing hand client-side.")
