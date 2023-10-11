@@ -12,4 +12,3 @@ jobs:
           distribution: adopt
       - name: Build
         run: ./gradlew build
-
