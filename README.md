@@ -7,7 +7,7 @@
   <p align="center">
     </p>A client for our different projects.</p>
     <a href="https://github.com/PoopenfartenDevelopment/FartenWare/releases"><img src="https://img.shields.io/badge/Version-v1.1-blueviolet" alt="Version"></a>
-    <img src="https://img.shields.io/badge/Minecraft%20Version-1.19.4-blueviolet" alt="Minecraft Version">
+    <img src="https://img.shields.io/badge/Minecraft%20Version-1.20.2-blueviolet" alt="Minecraft Version">
     <img src="https://img.shields.io/github/downloads/PoopenfartenDevelopment/FartenWare/total?color=blueviolet&label=Downloads">
     <br />
     <a href="https://www.youtube.com/shorts/AWOyEIuVzzQ"><strong>Learn more »</strong></a>
