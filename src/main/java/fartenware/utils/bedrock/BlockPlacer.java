@@ -32,16 +32,12 @@ public class BlockPlacer {
         PlayerEntity player = minecraftClient.player;
         float pitch;
         switch (direction) {
-            case UP:
-                pitch = 90f;
-                break;
-            case DOWN: {
+            case UP -> pitch = 90f;
+            case DOWN -> {
                 pitch = -90f;
-                break;
             }
-            default: {
+            default -> {
                 pitch = 90f;
-                break;
             }
         }
         minecraftClient.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(player.getYaw(1.0f), pitch, player.isOnGround()));

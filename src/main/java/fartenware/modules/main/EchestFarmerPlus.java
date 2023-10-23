@@ -104,7 +104,7 @@ public class EchestFarmerPlus extends Module {
     private boolean needsTo, pickingUp;
 
     public EchestFarmerPlus() {
-        super(FartenWare.MAIN, "echest-farmer+", "Places and breaks echests to farm obsidian.");
+        super(FartenWare.Main, "echest-farmer+", "Places and breaks echests to farm obsidian.");
     }
 
     @Override
@@ -134,7 +134,7 @@ public class EchestFarmerPlus extends Module {
             BlockPos pos = findSpot();
             BlockState state = mc.world.getBlockState(pos);
 
-            if (state.getMaterial().isReplaceable() || state.getBlock() == Blocks.ENDER_CHEST) {
+            if (state.isReplaceable() || state.getBlock() == Blocks.ENDER_CHEST) {
                 target = pos;
             } else return;
         }
@@ -180,7 +180,7 @@ public class EchestFarmerPlus extends Module {
         }
 
         // Place echest if the target pos is empty
-        if (mc.world.getBlockState(target).getMaterial().isReplaceable() && needsTo && !pickingUp) {
+        if (mc.world.getBlockState(target).isReplaceable() && needsTo && !pickingUp) {
             FindItemResult echest = InvUtils.findInHotbar(Items.ENDER_CHEST);
 
             if (!echest.found()) {

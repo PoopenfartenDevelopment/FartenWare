@@ -1,14 +1,10 @@
 package fartenware;
 
 import fartenware.modules.hud.TextPresets;
-import fartenware.modules.main.BedrockBreaker;
-import fartenware.modules.main.EchestFarmerPlus;
-import fartenware.modules.main.ItemFrameInserter;
-import fartenware.modules.main.ItemFramePlacer;
+import fartenware.modules.main.*;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.Systems;
-import meteordevelopment.meteorclient.commands.Commands;
 import meteordevelopment.meteorclient.systems.hud.Hud;
 import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
@@ -27,8 +23,8 @@ public class FartenWare extends MeteorAddon {
     static ModMetadata metadata = FabricLoader.getInstance().getModContainer("fartenware").orElseThrow(() -> new RuntimeException("FartenWare mod container not found!")).getMetadata();
     public static String VERSION = metadata.getVersion().toString();
     public static final Logger LOG = LoggerFactory.getLogger("FartenWare");
-    public static final Category MAIN = new Category("FartenWare", Items.SPYGLASS.getDefaultStack());
-    public static final HudGroup HUD = new HudGroup("FartenWare");
+    public static final Category Main = new Category("FartenWare", Items.SPYGLASS.getDefaultStack());
+    public static final HudGroup Hud = new HudGroup("FartenWare");
 
     @Override
     public void onInitialize() {
@@ -62,6 +58,6 @@ public class FartenWare extends MeteorAddon {
 
     @Override
     public void onRegisterCategories() {
-        Modules.registerCategory(MAIN);
+        Modules.registerCategory(Main);
     }
 }

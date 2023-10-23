@@ -70,7 +70,7 @@ public class ItemFramePlacer extends Module {
     private static final ArrayList<BlockPos> blocks = new ArrayList<>();
 
     public ItemFramePlacer() {
-        super(FartenWare.MAIN, "item-frame-placer", "Places item frames on pistons.");
+        super(FartenWare.Main, "item-frame-placer", "Places item frames on pistons.");
     }
 
     @Override

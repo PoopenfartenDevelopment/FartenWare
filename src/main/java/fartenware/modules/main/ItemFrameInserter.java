@@ -47,7 +47,7 @@ public class ItemFrameInserter extends Module {
     int timer = 0;
 
     public ItemFrameInserter() {
-        super(FartenWare.MAIN, "item-frame-inserter", "Places currently held item into item frame.");
+        super(FartenWare.Main, "item-frame-inserter", "Places currently held item into item frame.");
     }
 
     @Override

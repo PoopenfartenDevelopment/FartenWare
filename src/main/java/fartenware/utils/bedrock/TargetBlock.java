@@ -51,8 +51,8 @@ public class TargetBlock {
             case UNEXTENDED_WITH_POWER_SOURCE:
                 break;
             case EXTENDED:
-                ArrayList<BlockPos> nearByRedstoneTorchPosList = CheckingEnvironment.findNearbyRedstoneTorch(world, pistonBlockPos);
-                for (BlockPos pos : nearByRedstoneTorchPosList) {
+                ArrayList<BlockPos> nearbyRedstoneTorchPosList = CheckingEnvironment.findNearbyRedstoneTorch(world, pistonBlockPos);
+                for (BlockPos pos : nearbyRedstoneTorchPosList) {
                     BlockBreaker.breakBlock(pos);
                 }
                 BlockBreaker.breakBlock(this.pistonBlockPos);
@@ -79,8 +79,6 @@ public class TargetBlock {
             case STUCK:
                 BlockBreaker.breakBlock(pistonBlockPos);
                 BlockBreaker.breakBlock(pistonBlockPos.up());
-                break;
-            case NEEDS_WAITING:
                 break;
         }
         return null;

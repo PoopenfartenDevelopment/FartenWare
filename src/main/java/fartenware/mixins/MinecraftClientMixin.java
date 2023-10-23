@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(MinecraftClient.class)
-public class McClientMixin {
+public class MinecraftClientMixin {
 
     @Shadow
     @Nullable

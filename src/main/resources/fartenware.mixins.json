@@ -3,7 +3,7 @@
   "package": "fartenware.mixins",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "McClientMixin"
+    "MinecraftClientMixin"
   ],
   "injectors": {
     "defaultRequire": 1

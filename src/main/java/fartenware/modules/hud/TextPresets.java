@@ -5,7 +5,7 @@ import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
 import meteordevelopment.meteorclient.systems.hud.elements.TextHud;
 
 public class TextPresets {
-    public static final HudElementInfo<TextHud> INFO = new HudElementInfo<>(FartenWare.HUD, "farten-presets", "Displays text with Starscript.", TextPresets::create);
+    public static final HudElementInfo<TextHud> INFO = new HudElementInfo<>(FartenWare.Hud, "farten-presets", "Displays text with Starscript.", TextPresets::create);
 
     private static TextHud create() {
         return new TextHud(INFO);
