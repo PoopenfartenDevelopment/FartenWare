@@ -104,7 +104,7 @@ public class EchestFarmerPlus extends Module {
     private boolean needsTo, pickingUp;
 
     public EchestFarmerPlus() {
-        super(FartenWare.Main, "echest-farmer+", "Places and breaks echests to farm obsidian.");
+        super(FartenWare.MAIN, "echest-farmer+", "Places and breaks echests to farm obsidian.");
     }
 
     @Override

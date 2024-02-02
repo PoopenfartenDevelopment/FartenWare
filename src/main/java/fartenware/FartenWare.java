@@ -23,8 +23,8 @@ public class FartenWare extends MeteorAddon {
     static ModMetadata metadata = FabricLoader.getInstance().getModContainer("fartenware").orElseThrow(() -> new RuntimeException("FartenWare mod container not found!")).getMetadata();
     public static String VERSION = metadata.getVersion().toString();
     public static final Logger LOG = LoggerFactory.getLogger("FartenWare");
-    public static final Category Main = new Category("FartenWare", Items.SPYGLASS.getDefaultStack());
-    public static final HudGroup Hud = new HudGroup("FartenWare");
+    public static final Category MAIN = new Category("FartenWare", Items.SPYGLASS.getDefaultStack());
+    public static final HudGroup HUD = new HudGroup("FartenWare");
 
     @Override
     public void onInitialize() {
@@ -58,6 +58,6 @@ public class FartenWare extends MeteorAddon {
 
     @Override
     public void onRegisterCategories() {
-        Modules.registerCategory(Main);
+        Modules.registerCategory(MAIN);
     }
 }

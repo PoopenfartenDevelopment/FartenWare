@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "fartenware",
-  "version": "1.1",
+  "version": "1.2",
   "name": "FartenWare",
-  "description": "Addon for our various projects.",
+  "description": "An addon for our various projects.",
   "authors": [
     "RedCarlos26",
     "Yeetusthefeetus"
@@ -31,7 +31,7 @@
   },
   "depends": {
     "java": ">=17",
-    "minecraft": "1.20.2",
-    "meteor-client": ">0.5.4"
+    "minecraft": "1.20.4",
+    "meteor-client": ">0.5.5"
   }
 }

@@ -66,7 +66,7 @@ public class BedrockBreaker extends Module {
     private static ArrayList<TargetBlock> cachedTargetBlockList = new ArrayList<>();
 
     public BedrockBreaker() {
-        super(FartenWare.Main, "bedrock-breaker", "Breaks bedrock automatically (requires haste 2).");
+        super(FartenWare.MAIN, "bedrock-breaker", "Breaks bedrock automatically (requires haste 2).");
     }
 
     @Override
